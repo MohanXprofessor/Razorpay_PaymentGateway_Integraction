@@ -43,7 +43,7 @@ This project demonstrates order creation, payment checkout, and payment verifica
 ## 🔧 Configuration
 
 ### 1️⃣ Razorpay Credentials (Environment Variables)
-
+Get Your Own Razorpay Test Key Id
 ```properties
-razorpay.key.id=${RAZORPAY_KEY_ID}
-razorpay.key.secret=${RAZORPAY_KEY_SECRET}
+razorpay.key.id=
+razorpay.key.secret=
