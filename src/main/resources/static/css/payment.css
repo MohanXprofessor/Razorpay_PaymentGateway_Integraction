@@ -1,0 +1,108 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Form card */
+form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  /* 2-field opposite grid */
+  display: grid;
+  grid-template-columns: 140px 1fr 140px 1fr;
+  gap: 14px 18px;
+}
+
+/* Remove <br> spacing */
+form br {
+  display: none;
+}
+
+/* Heading full width */
+form h2 {
+  grid-column: span 4;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+/* Labels */
+label {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* Focus */
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Description → full row */
+label:has(+ input[th\\:field*="description"]),
+input[th\\:field*="description"] {
+  grid-column: span 4;
+}
+
+/* Button full width */
+button {
+  grid-column: span 4;
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Mobile: stack vertically */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form h2,
+  label,
+  input,
+  button {
+    grid-column: span 1;
+  }
+}

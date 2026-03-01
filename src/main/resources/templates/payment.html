@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Make Payment</title>
+	<link rel="stylesheet" th:href="@{/css/payment.css}">
+</head>
+<body>
+
+
+<form th:action="@{/create-order}" method="post" th:object="${payment}">
+<h2>Payment Details</h2>
+
+   
+
+    <label>Name:</label>
+    <input type="text" th:field="*{customerName}" /><br/><br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{customerEmail}" /><br/><br/>
+
+    <label>Phone:</label>
+    <input type="text" th:field="*{customerPhone}" /><br/><br/>
+
+    <label>Product:</label>
+    <input type="text" th:field="*{productName}" /><br/><br/>
+	<label>Amount:</label>
+	   <input type="number" th:field="*{amount}" required /><br/><br/>
+
+	   <label>Currency:</label>
+	   <input type="text" th:field="*{currency}" value="INR" /><br/><br/>
+
+    <label>Description:</label>
+    <input type="text" th:field="*{description}" /><br/><br/>
+
+    <button type="submit">Pay Now</button>
+</form>
+
+</body>
+</html>
